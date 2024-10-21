@@ -1,4 +1,0 @@
-/api/*
-  Access-Control-Allow-Origin: https://login-fe4-5.netlify.app
-  Access-Control-Allow-Methods: GET, POST, OPTIONS
-  Access-Control-Allow-Headers: Content-Type, Authorization
