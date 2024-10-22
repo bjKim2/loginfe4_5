@@ -19,6 +19,9 @@ const RegisterPage = () => {
         // 패스워드가 일치 하지 않는다.
         throw new Error("패스워드가 일치하지 않습니다.")
       }
+      if(password === '' || secPassword === '' || email === '' || name === ''){
+        throw new Error("모든 항목을 입력해주세요")
+      }
       const response = await api.post('/user' ,{name, email, password});
       if(response.status=== 200){
         navigate('/login');
