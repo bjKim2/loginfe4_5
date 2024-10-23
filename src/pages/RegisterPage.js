@@ -26,12 +26,15 @@ const RegisterPage = () => {
       if(response.status=== 200){
         navigate('/login');
       }else{
-        throw new Error(response.data.error                                           )
+        throw new Error(response.error)
+        console.log("rrrr : ",response)
       }
-      console.log("rrrr : ",response)
     }catch(error){
-      setError(error.message)
-      //err
+      if(error.error){
+        setError("이미 존재하는 이메일입니다.")
+      }else{
+        setError(error.message)
+      }
     }
   }
   return (

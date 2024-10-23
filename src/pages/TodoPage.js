@@ -56,8 +56,16 @@ const TodoPage = () => {
       console.log("error", error);
     }
   };
+
+  const logout = () => {
+    sessionStorage.removeItem("token");
+    window.location.reload();
+  }
   return (
     <Container>
+        <button onClick={logout} className="custom-button">
+            로그아웃
+        </button>
       <Row className="add-item-row">
         <Col xs={12} sm={10}>
           <input
